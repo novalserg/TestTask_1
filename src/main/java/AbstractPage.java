@@ -1,10 +1,10 @@
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
+import java.util.Scanner;
 
 abstract class AbstractPage {
     abstract String getName();
-
 
     public List<WebElement> getWebElements() {
         return null; // Вернуть список веб элементов
@@ -12,6 +12,34 @@ abstract class AbstractPage {
 
     public WebElement getElementByName(String name) {
         return null; // Вернуть веб элемент по имени
+    }
+
+   /* public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Добро пожаловать на страницу авторизации!");
+        System.out.print("Введите имя пользователя: ");
+        String username = scanner.nextLine();
+
+        System.out.print("Введите пароль: ");
+        String password = scanner.nextLine();
+
+        if (authenticate(username, password)) {
+            System.out.println("Авторизация прошла успешно!");
+            showMainPage(username);
+        } else {
+            System.out.println("Неверное имя пользователя или пароль. Попробуйте еще раз.");
+        }
+
+    }*/
+    private static boolean authenticate (String username, String password){
+        // проверка имени пользователя и пароля
+        return true;
+    }
+    private static void showMainPage(String username) {
+        System.out.println("\nДобро пожаловать на главную страницу, " + username + "!");
+        System.out.println("Это ваш личный кабинет.");
+        // добавьте здесь дополнительный функционал главной страницы
     }
 
     class Table extends AbstractPage implements WithSize, WithText, Editable {
